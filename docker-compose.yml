@@ -61,7 +61,7 @@ services:
 
   install_laravel:
     image: composer:latest
-    container_name: composer
+    container_name: install_laravel
     volumes:
       - ./src:/var/www/html
     working_dir: /var/www/html
