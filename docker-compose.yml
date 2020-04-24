@@ -59,6 +59,18 @@ services:
     networks:
       - laravel
 
+  install_laravel:
+    image: composer:latest
+    container_name: composer
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    command: composer create-project --prefer-dist laravel/laravel . && chmod -R 777 storage/* && chmod -R 777 bootstrap/cache/*
+    depends_on:
+      - php
+    networks:
+      - laravel
+      
   npm:
     image: node:13.7
     container_name: npm
