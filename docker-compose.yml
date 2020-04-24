@@ -65,7 +65,7 @@ services:
     volumes:
       - ./src:/var/www/html
     working_dir: /var/www/html
-    command: composer create-project --prefer-dist laravel/laravel . && chmod -R 777 storage/* && chmod -R 777 bootstrap/cache/*
+    command: composer create-project --prefer-dist laravel/laravel .
     depends_on:
       - php
     networks:
