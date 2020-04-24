@@ -77,6 +77,7 @@ services:
       - ./src:/var/www/html
     depends_on:
       - mysql
+      - composer
     working_dir: /var/www/html
     entrypoint: ['php', '/var/www/html/artisan']
     networks:
