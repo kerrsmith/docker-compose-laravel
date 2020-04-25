@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 networks:
   laravel:
@@ -53,7 +53,7 @@ services:
     volumes:
       - ./src:/var/www/html
     working_dir: /var/www/html
-    entrypoint: ['composer']
+    entrypoint: ["composer"]
     depends_on:
       - php
     networks:
@@ -76,14 +76,14 @@ services:
       - php
     networks:
       - laravel
-      
+
   npm:
     image: node:13.7
     container_name: npm
     volumes:
       - ./src:/var/www/html
     working_dir: /var/www/html
-    entrypoint: ['npm']
+    entrypoint: ["npm"]
 
   artisan:
     build:
@@ -95,6 +95,6 @@ services:
     depends_on:
       - mysql
     working_dir: /var/www/html
-    entrypoint: ['php', '/var/www/html/artisan']
+    entrypoint: ["php", "/var/www/html/artisan"]
     networks:
       - laravel
