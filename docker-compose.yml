@@ -59,6 +59,15 @@ services:
     networks:
       - laravel
 
+  install_laravel:
+    build:
+      context: .
+      dockerfile: Dockerfile_install
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - laravel
+
   npm:
     image: node:13.7
     container_name: npm
