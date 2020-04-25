@@ -63,6 +63,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_install
+    container_name: install_laravel
     volumes:
       - ./src:/var/www/html
     networks:
