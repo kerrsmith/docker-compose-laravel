@@ -66,6 +66,7 @@ services:
     container_name: install_laravel
     volumes:
       - ./src:/var/www/html
+    working_dir: /var/www/html
     networks:
       - laravel
 
