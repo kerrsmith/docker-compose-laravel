@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  install_laravel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: install_laravel
+    working_dir: /var/www/html
