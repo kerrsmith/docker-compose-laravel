@@ -6,4 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: install_laravel
-    working_dir: /var/www/html
+    volumes:
+      - ../src:/var/www/html
+    command: mv /temp_install/* /var/www/html
