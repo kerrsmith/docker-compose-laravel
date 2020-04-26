@@ -8,4 +8,4 @@ services:
     container_name: install_laravel
     volumes:
       - ../src:/var/www/html
-    command: cp -r /temp_install/. /var/www/html
+    command: cp -rp /temp_install/. /var/www/html
