@@ -1,7 +1,8 @@
 version: "3"
 
 networks:
-  laravel:
+  frontend:
+  backend:
 
 services:
   nginx:
@@ -16,7 +17,8 @@ services:
       - php
       - mysql
     networks:
-      - laravel
+      - frontend
+      - backend
 
   mysql:
     image: mysql:5.7.29
@@ -33,7 +35,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     networks:
-      - laravel
+      - backend
 
   php:
     build:
@@ -45,7 +47,7 @@ services:
     ports:
       - "9000:9000"
     networks:
-      - laravel
+      - backend
 
   composer:
     image: composer:latest
@@ -75,4 +77,4 @@ services:
     working_dir: /var/www/html
     entrypoint: ["php", "/var/www/html/artisan"]
     networks:
-      - laravel
+      - backend
