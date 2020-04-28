@@ -20,7 +20,7 @@ services:
       - laravel
 
   mysql:
-    image: mysql:5.7.29
+    image: mariadb:10.4.12
     container_name: mysql
     restart: unless-stopped
     ports:
@@ -59,7 +59,7 @@ services:
     entrypoint: ["composer"]
 
   npm:
-    image: node:13.7
+    image: node:alpine
     container_name: npm
     volumes:
       - ./src:/var/www/html
